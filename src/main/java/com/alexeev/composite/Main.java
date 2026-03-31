@@ -1,13 +1,13 @@
 package com.alexeev.composite;
 
 import com.alexeev.composite.entity.TextComponent;
+import com.alexeev.composite.exception.CustomException;
 import com.alexeev.composite.parser.TextParser;
 import com.alexeev.composite.reader.TextFileReader;
 import com.alexeev.composite.service.TextService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +15,7 @@ public class Main {
 
   private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws CustomException {
     String filePath = "src/main/resources/text.txt";
     TextFileReader reader = new TextFileReader();
     TextParser parser = TextParser.createChain();
